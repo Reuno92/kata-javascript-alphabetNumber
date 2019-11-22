@@ -1,23 +1,38 @@
 const alphabetNumberPosition = require('./app');
 
-test('should return a = 1', () => {
-	expect(alphabetNumberPosition('a')).toBe('1');
+let expected = '';
+let received = '';
+
+
+test(`should return 1 with a`, () => {
+	expected = '1';
+	received = 'a';
+	expect(alphabetNumberPosition(received)).toBe(expected);
 });
 
-test('should return 1,2 with a,b', () => {
-	expect(alphabetNumberPosition('ab')).toBe('1 2');
+
+test(`should return 1 2 with ab`, () => {
+	expected = '1 2';
+	received = 'ab';
+	expect(alphabetNumberPosition(received)).toBe(expected);
 });
 
-test('should return 1,2,3 with a,b,c', () => {
-	expect(alphabetNumberPosition('abc')).toBe('1 2 3');
+
+test(`should return 1 2 3 with abc`, () => {
+	expected = '1 2 3';
+	received = 'abc';
+	expect(alphabetNumberPosition(received)).toBe(expected);
 });
 
-test('should return hello with 8,5,12,12,15', () => {
-	expect(alphabetNumberPosition('hello')).toBe('8 5 12 12 15');
+
+test(`should return  with Hello`, () => {
+	expected = '8 5 12 12 15';
+	received = 'hello';
+	expect(alphabetNumberPosition(received)).toBe(expected);
 });
 
 // Acceptation test
-test('should return hello with 20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 15 3 11', () => {
+test(`should return long number suite with long sentence`, () => {
 	expected = "The sunset sets at twelve o' clock.";
 	received = "20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 15 3 11";
 	expect(alphabetNumberPosition(expected)).toBe(received);
